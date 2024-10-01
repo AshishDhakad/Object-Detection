@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+@import url("./modal.css");
+@import url("./loader.css");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body,
+input {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f3696e, #f8a902);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  width: 100%;
+  max-width: 1020px;
+  height: 640px;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
+  padding: 30px;
+  display: flex;
+}
+
+.left-box {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-left-box {
+  max-width: 330px;
+  width: 100%;
+  height: 100%;
+  margin-top: 80px;
+}
+
+.right-box {
+  background-color: white;
+  box-shadow: 0px 0px 50px 4px rgba(0, 0, 0, 0.27);
+  height: 100%;
+  width: 55%;
+  border-radius: 30px;
+}
+
+.inner-right-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.inner-right-box .text {
+  font-size: 20px;
+  animation: showText 1.5s ease;
+}
+
+.file-drop-zone {
+  background-color: #fafafa;
+  border: 2px dashed #eeeeee;
+  height: 60px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.file-drop-zone-text {
+  display: flex;
+  align-items: center;
+}
+
+.file-drop-zone-text p {
+  font-size: 10px;
+  color: #bdbdbd;
+}
+
+.file-drop-zone:hover {
+  border-color: #8371fd;
+}
+
+.service-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.service-item input {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  outline: 2px solid #8371fd;
+  outline-offset: 2px;
+}
+
+.service-item input:checked {
+  background-color: #8371fd;
+}
+
+.service-item label {
+  color: #151111;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 27px;
+  margin-right: 10px;
+}
+
+.logo h4 {
+  font-size: 20px;
+  color: #151111;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.heading {
+  margin: 50px 0;
+}
+
+.heading h2 {
+  font-weight: 600;
+  color: #151111;
+}
+
+.heading h6 {
+  color: #bababa;
+  font-weight: 400;
+  font-size: 16px;
+  display: inline;
+}
+
+.magic-btn {
+  display: inline-block;
+  width: 100%;
+  height: 43px;
+  background-color: #151111;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.image {
+  width: 90%;
+  border-radius: 50px;
+  padding: 30px;
+  animation: showImage 1s ease-in;
+}
+
+.image.show {
+  opacity: 1;
+}
+
+.text-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.text-wrap {
+  height: 40px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.bullets {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bullets span {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #aaa;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bullets span.active {
+  width: 15px;
+  background-color: black;
+  border-radius: 4px;
+}
+
+@media (max-width: 992px) {
+  .box {
+    height: auto;
+    max-width: 550px;
+    overflow: hidden;
+    flex-direction: column;
+  }
+
+  .left-box {
+    width: 100%;
+  }
+
+  .right-box {
+    margin-top: 30px;
+    width: 100%;
+    height: 100px;
+  }
+
+  .text-wrap .text {
+    font-size: 16px;
+  }
+
+  .image {
+    display: none;
+  }
+}
+
+.no-result {
+  display: flex;
+  justify-content: center;
+}
+.no-result p {
+  color: darkred;
+  font-size: 22px;
+}
+
+@keyframes showImage {
+  0% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes showText {
+  0% {
+    margin-right: -250px;
+  }
+  100% {
+    margin-right: 0px;
+  }
+}
